@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 2 meta tags MUST come firt in the head; any other head content must come *after* these tags-->
+
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins(below), or include individual files as needed-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/1a02223bf5.js" crossorigin="anonymous"></script>
+
+    <title>Quality T-shirt Inc.</title>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/woman.js"></script>
+    <script src="scripts/men.js"></script>
+    <script src="scripts/util.js"></script>
+    <script src="scripts/home.js"></script>
+    <script src="scripts/children.js"></script>
+    <script src="scripts/shop.js"></script>
+  </head>
+  <body>
+    <!--Top navigation bar with BRAND NAME, HOME, SHOP dropdown menu, and ABOUT-->
+    <nav id="topNav" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!--Mobile response bar-->
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target=".navbar-collapse"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!--Company Title and LOGO-->
+        <div class="navbar-collapse collapse">
+          <a class="navbar-brand" href="#">Quality T-shirts Inc.</a>
+          <a href="index.html"><img src="images/logo.png" width="50" height="50" alt="LOGO"/></a>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="index.html">Home</a></li>
+
+            <!-- Search Bar -->
+            <li class="searchBar">
+              <input class="form-control" type="text" placeholder="Search products" />
+            </li>
+            <!-- Women's Clothing DropDown Menu-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                >Women<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Women's Clothing</li>
+
+                <li id="woman_1"><a class="dropdown-item" href="#">T-Shirts</a></li>
+              </ul>
+            </li>
+            <!-- Men's Clothing DropDown Menu-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                >Men<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Men's Clothing</li>
+
+                <li id="men_1"><a class="dropdown-item" href="#">T-Shirts</a></li>
+              </ul>
+            </li>
+            <!-- Children's Clothing DropDown Menu-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                >Children<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Children's Clothing</li>
+                <li id="child_1"><a class="dropdown-item" href="#">T-Shirts</a></li>
+              </ul>
+            </li>
+            <!-- About Button-->
+            <li id="about_1"><a href="contact.html">Contact Us</a></li>
+            <!-- Shopping Cart Button-->
+            <li id="shop_1">
+              <a href="#"> <i class="fas fa-shopping-cart fa-lg"></i> </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CAROUSEL CONTAINER (SLIDE SHOW IMAGES) -->
+    <div id="homeCarousel" class="container">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+        <!-- Indicators -->
+
+        <!-- Wrapper for slides-->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img id="menSlide" src="images/menSlider.jpg" style="width:100%;" alt="menSlide" />
+            <div class="carousel-caption">
+              <h1>Men's T-Shirts</h1>
+            </div>
+          </div>
+
+          <div class="item">
+            <img
+              id="womanSlide"
+              src="images/womanSlider12.jpg"
+              style="width:100%;"
+              alt="womanSlide"
+            />
+            <div class="carousel-caption">
+              <h1>Women's T-Shirts</h1>
+            </div>
+          </div>
+
+          <div class="item">
+            <img
+              id="childrenSlide"
+              src="images/childSlider23.jpg"
+              style="width:100%;"
+              alt="childrenSlide"
+            />
+            <div class="carousel-caption">
+              <h1>Children's T-Shirts</h1>
+            </div>
+          </div>
+        </div>
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control " href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+
+    <h1 id="subTitle"></h1>
+
+    <!-- CONTAINER FOR OBJECTS OF MEN/WOMEN/CHILDREN T-SHIRT LINKS-->
+    <div id="grid">
+      <div id="gridTable" class="grid-container"></div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal Content (The Image) -->
+      <div id="mod_content" class="modal-content">
+        <!-- The Close Button -->
+        <span id="closed" class="close">&times;</span>
+        <img id="modalImg" src="unset" alt="" />
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+      </div>
+    </div>
+
+    <footer>
+      <!--Bottom Left Navigation Bar - Add's Copyright-->
+      <div id="botNav" class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+          <div class="navbar-text pull-left">
+            <p>copyright Quality T-shirts Inc. 2020</p>
+          </div>
+
+          <div class="navbar-text"></div>
+
+          <!-- Bottom Right Navigation Bar - Add's Social Links-->
+          <div class="navbar-text pull-right">
+            <p>Follow Us</p>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<!--
+      Introduction
+    
+
+      You are asked to create an online store in HTML, CSS, and JavaScript.
+      Please implement a store with all of the following requirements.
+
+      You may remove this comment and place all your HTML in this file.
+
+      Requirements:
+
+      1. Include a header across the top with your store's name, a logo,
+      and use a different background colour, web font, etc. Your header should
+      include info about what the store is, what it sells, etc.  Use some images
+      to try and draw the user in. NOTE: place all your site's images in the
+      `src/images/` directory.
+
+      2. Below the header, a multi-column layout of items you can purchase in the
+      store.  You must have at least 10 items in your store, and at least 2
+      categories of items. For example, if you are selling clothing, you might
+      have categories for Men, Women, and Children, and each category would have
+      its own set of items.  Each item should include:
+      
+        - a picture of the item
+        - the item's name or title
+        - a complete description of the item
+        - a category (i.e., each item must belong to one or more categories)
+        - a price in Canadian Dollars
+      
+      Each item should be its own "card" (i.e., some kind of box around each item
+      separating one from the next, with suitable whitespace between).
+
+      3. A category menu or "sidebar" (left, right, or top depending on your design)
+      showing the different categories of items in your store.  If a
+      user clicks on one of the categories, use CSS and JavaScript to hide all
+      other items in the store (i.e., only show items for the chosen category).
+      Make sure you include a way to return to seeing all categories, and make it
+      obvious to the user that they are only seeing a partial list of items when
+      you filter by category (i.e., use CSS and HTML to change things somehow).
+
+      4. Below the store items, a footer with the name of the store, any relevant
+      links you need to give users.  Include links and icons to any social media
+      for your store (Facebook, Twitter, etc). NOTE: you don't have to create such
+      accounts, but you can provide links to imaginary accounts.
+
+      5. Use at least two different Web Fonts for your store.  The titles should
+      be different from any regular text.  Use a free font service like
+      https://fonts.google.com/ or any other that you choose.  You can also
+      experiment with different font sizes and colours to draw attention toward
+      or away from various parts of your design.
+
+      6. Pick a colour theme using a tool like https://colorhunt.co/ with at least
+      3 colours (primary, secondary, accent), and use them throughout your site
+      for backgrounds, borders, fonts. Your store page needs to look attractive
+      and marks will be given for good a good looking site.  No one will buy from
+      a store that looks like its owners aren't professional or don't care about
+      details.  Also make sure that the colour contrast in your site is suitable
+      for everyone to read.
+
+      7. Use modern CSS to help you achieve your layout.  For example, Flexbox
+      and CSS Grid can help you create professional looking layouts.  Here
+      are some guides to get you started:
+
+       - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Basic_Concepts_of_Flexbox
+       - https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout
+       
+      You are also welcome to use existing CSS libraries to help you with your layout,
+      but you must also include your own styles (i.e., you can't use a library
+      for everything in your design).
+
+      8. Make sure you don't use copyrighted materials from other sites.  If you use
+      icons, fonts, images, etc., make sure you are legally permitted to reuse them,
+      and include references to indicate where you got them. Some resources to consider:
+
+        - https://unsplash.com/ for images
+        - https://fontawesome.com/ for icons
+        - https://gallery.manypixels.co/ or https://undraw.co/illustrations for illustrations (SVG)
+
+      9. Make sure you reduce the download size of images you include in your
+      store.  Your images shouldn't be larger than 1M in size.  Users don't want to
+      download 10s or 100s of megabytes of data, especially on mobile.  You can use an
+      online tool like https://squoosh.app/ to help you reduce images.  You will
+      lose marks if your images aren't optimized for the web.
+
+      10. Make sure you have no JavaScript or other errors in your Dev Tools Console.
+      Run your site, and test all aspects of it with the Console open, and fix
+      any issues you encounter.
+
+      11. Make sure your code is properly indented and commented, and that you've used
+      good naming practices for variables, functions, ids, classes, etc.
+
+      12. Have fun!  Build something you'd be proud to show future employers in
+      interviews.  Take the time to properly design and implement a beautiful and
+      functional storefront.  Maybe it will inspire you to start your own online business?
+    -->

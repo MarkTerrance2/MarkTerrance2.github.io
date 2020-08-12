@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 2 meta tags MUST come firt in the head; any other head content must come *after* these tags-->
+
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="style.css" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins(below), or include individual files as needed-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/1a02223bf5.js" crossorigin="anonymous"></script>
+
+    <title>Quality T-shirt Inc.</title>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/validation.js"></script>
+  </head>
+  <body>
+    <!--Top navigation bar with BRAND NAME, HOME, SHOP dropdown menu, and ABOUT-->
+    <nav id="topNav" class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <!--Mobile response bar-->
+        <button
+          type="button"
+          class="navbar-toggle"
+          data-toggle="collapse"
+          data-target=".navbar-collapse"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <!--Company Title and LOGO-->
+        <div class="navbar-collapse collapse">
+          <a class="navbar-brand" href="#">Quality T-shirts Inc.</a>
+          <a href="index.html"><img src="images/logo.png" width="50" height="50" alt="LOGO"/></a>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="index.html">Home</a></li>
+
+            <!-- Search Bar -->
+            <li class="searchBar">
+              <input class="form-control" type="text" placeholder="Search products" />
+            </li>
+            <!-- Women's Clothing DropDown Menu-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                >Women<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Women's Clothing</li>
+
+                <li id="woman_1"><a class="dropdown-item" href="#">T-Shirts</a></li>
+              </ul>
+            </li>
+            <!-- Men's Clothing DropDown Menu-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                >Men<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Men's Clothing</li>
+
+                <li id="men_1"><a class="dropdown-item" href="#">T-Shirts</a></li>
+              </ul>
+            </li>
+            <!-- Children's Clothing DropDown Menu-->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                >Children<b class="caret"></b
+              ></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Children's Clothing</li>
+                <li id="child_1"><a class="dropdown-item" href="#">T-Shirts</a></li>
+              </ul>
+            </li>
+            <!-- About Button-->
+            <li id="about_1"><a href="#">Contact Us</a></li>
+            <!-- Shopping Cart Button-->
+            <li id="shop_1">
+              <a href="#"> <i class="fas fa-shopping-cart fa-lg"></i> </a>
+            </li>
+          </ul>
+        </div>
+
+
+      
+      </div>
+
+     
+    </nav>
+
+
+  <div id="formDiv">
+   
+ 
+  <!--COMMENT: ADD AN ACTION ATTRIBUTE TO FORM WHEN FOUND AND ON SUBMIT-->
+    <form id="contactForm" name="formOne"method="POST" action="https://httpbin.org/post" onsubmit="return validateInput();">
+      <fieldset id="formWrap" bord>
+        <legend>Contact Form</legend>
+      <label>Name* <input type="text" name="name"></label> <br>
+      <label>Email* <input type="email" name="mail"></label><br>
+              <label>Address* <input type="text" name="street"></label><br>
+              <!-- For city use a <datalist> for autocomplete of common Canadian Cities-->
+                <label>City* <input list="cities" name="cities" id="city"></label><br>
+                <datalist id="cities">
+                  <option value="Toronto">
+                  <option value="Vancouver">
+                    <option value="Montreal">
+                      <option value="Niagra Falls">
+                        <option value="Victoria">
+                          <option value="Halifax">
+                            <option value="Quebec City">
+                             <option value="Calgary">
+                               <option value="Ottawa">
+              </datalist>
+              <!--Must be a valid Canadian Postal Code, with or without a space, use a regex pattern-->
+              <label>Postal Code* <input type="text" name="postalCode" pattern="([ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ])\ ?([0-9][ABCEGHJKLMNPRSTVWXYZ][0-9])
+                " required> <br><br>
+
+              <!--Radio options Question, Comment, and order problem. If the user selects order problem dynamically
+              reveal with JS another input box to enter the order number. Otherwise hide the input box if comment or question
+            is clicked-->
+              <label>What is this about?</label> <br>
+              <input type="radio" name="option" onclick=depopulateTextBox()>Question
+              <input type="radio" name="option" onclick=depopulateTextBox()>Comment
+              <input type="radio" name="option" onclick=populateTextBox()>Order Problem
+              <br>
+              <br>
+              <div id="textBox">
+<label id="inputBox"></label>
+              </div>
+              <!--A large area to enter a message they want to send-->
+              <br>
+              <div id="error"></div>
+              <textarea rows="4" cols="50" placeholder="Enter Text Here">
+              </textarea>
+              <!--A hidden input field with your name-->
+              <input type="hidden" name="entry" id="entry" value="Mark"><br>
+              <input type="submit" name="submit" value="Send">
+              <input type="reset"  value="    Clear   ">  
+            </fieldset>
+              </form>
+           
+            </div>
+           
+    <footer>
+      <!--Bottom Left Navigation Bar - Add's Copyright-->
+      <div id="botNav" class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="container">
+          <div class="navbar-text pull-left">
+            <p>copyright Quality T-shirts Inc. 2020</p>
+          </div>
+
+          <div class="navbar-text">
+
+              <!-- Form Containor -->
+    <form id="formId" method="POST" action="https://formspree.io/xnqgrzwr">
+      <label>
+        Subscribe: <input type="email" name="email">
+      </label>
+      <label>
+        <input type="submit" name="submit" value="Send">
+      </label>
+   
+      </form>
+      
+    </div>
+          </div>
+
+          <!-- Bottom Right Navigation Bar - Add's Social Links-->
+          <div class="navbar-text pull-right">
+            <p>Follow Us</p>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f fa-lg"></i></a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter fa-lg"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
