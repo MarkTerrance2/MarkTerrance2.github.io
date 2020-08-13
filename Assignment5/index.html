@@ -11,7 +11,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <!--Custom CSS-->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Include all compiled plugins(below), or include individual files as needed-->
@@ -20,13 +20,13 @@
     <script src="https://kit.fontawesome.com/1a02223bf5.js" crossorigin="anonymous"></script>
 
     <title>Quality T-shirt Inc.</title>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/woman.js"></script>
-    <script src="scripts/men.js"></script>
-    <script src="scripts/util.js"></script>
-    <script src="scripts/home.js"></script>
-    <script src="scripts/children.js"></script>
-    <script src="scripts/shop.js"></script>
+    <script src="./src/scripts/script.js"></script>
+    <script src="./src/scripts/woman.js"></script>
+    <script src="./src/scripts/men.js"></script>
+    <script src="./src/scripts/util.js"></script>
+    <script src="./src/scripts/home.js"></script>
+    <script src="./src/scripts/children.js"></script>
+    <script src="./src/scripts/shop.js"></script>
   </head>
   <body>
     <!--Top navigation bar with BRAND NAME, HOME, SHOP dropdown menu, and ABOUT-->
@@ -48,7 +48,9 @@
         <!--Company Title and LOGO-->
         <div class="navbar-collapse collapse">
           <a class="navbar-brand" href="#">Quality T-shirts Inc.</a>
-          <a href="index.html"><img src="images/logo.png" width="50" height="50" alt="LOGO"/></a>
+          <a href="index.html"
+            ><img src="./src/images/logo.png" width="50" height="50" alt="LOGO"
+          /></a>
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="index.html">Home</a></li>
 
@@ -107,7 +109,12 @@
         <!-- Wrapper for slides-->
         <div class="carousel-inner">
           <div class="item active">
-            <img id="menSlide" src="images/menSlider.jpg" style="width:100%;" alt="menSlide" />
+            <img
+              id="menSlide"
+              src="./src/images/menSlider.jpg"
+              style="width:100%;"
+              alt="menSlide"
+            />
             <div class="carousel-caption">
               <h1>Men's T-Shirts</h1>
             </div>
@@ -116,7 +123,7 @@
           <div class="item">
             <img
               id="womanSlide"
-              src="images/womanSlider12.jpg"
+              src="./src/images/womanSlider12.jpg"
               style="width:100%;"
               alt="womanSlide"
             />
@@ -128,7 +135,7 @@
           <div class="item">
             <img
               id="childrenSlide"
-              src="images/childSlider23.jpg"
+              src="./src/images/childSlider23.jpg"
               style="width:100%;"
               alt="childrenSlide"
             />
@@ -169,13 +176,25 @@
     <footer>
       <!--Bottom Left Navigation Bar - Add's Copyright-->
       <div id="botNav" class="navbar navbar-inverse navbar-fixed-bottom">
-        <div class="container">
+        
           <div class="navbar-text pull-left">
             <p>copyright Quality T-shirts Inc. 2020</p>
           </div>
 
-          <div class="navbar-text"></div>
+          <div class="navbar-text text-center" style="text-align: center;">
 
+              <!-- Form Container -->
+              <form id="formId" method="POST" action="https://formspree.io/xnqgrzwr">
+                <label>
+                  Subscribe: <input type="email" name="email">
+                </label>
+                <label>
+                  <input type="submit" name="submit" value="Send">
+                </label>
+             
+                </form>
+      
+    </div>
           <!-- Bottom Right Navigation Bar - Add's Social Links-->
           <div class="navbar-text pull-right">
             <p>Follow Us</p>

@@ -11,7 +11,7 @@
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <!--Custom CSS-->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Include all compiled plugins(below), or include individual files as needed-->
@@ -20,8 +20,8 @@
     <script src="https://kit.fontawesome.com/1a02223bf5.js" crossorigin="anonymous"></script>
 
     <title>Quality T-shirt Inc.</title>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/validation.js"></script>
+    <script src="./src/scripts/script.js"></script>
+    <script src="./src/scripts/validation.js"></script>
   </head>
   <body>
     <!--Top navigation bar with BRAND NAME, HOME, SHOP dropdown menu, and ABOUT-->
@@ -43,60 +43,14 @@
         <!--Company Title and LOGO-->
         <div class="navbar-collapse collapse">
           <a class="navbar-brand" href="#">Quality T-shirts Inc.</a>
-          <a href="index.html"><img src="images/logo.png" width="50" height="50" alt="LOGO"/></a>
+          <a href="index.html"><img src="./src/images/logo.png" width="50" height="50" alt="LOGO"/></a>
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Home</a></li>
-
-            <!-- Search Bar -->
-            <li class="searchBar">
-              <input class="form-control" type="text" placeholder="Search products" />
-            </li>
-            <!-- Women's Clothing DropDown Menu-->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                >Women<b class="caret"></b
-              ></a>
-              <ul class="dropdown-menu">
-                <li class="dropdown-header">Women's Clothing</li>
-
-                <li id="woman_1"><a class="dropdown-item" href="#">T-Shirts</a></li>
-              </ul>
-            </li>
-            <!-- Men's Clothing DropDown Menu-->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                >Men<b class="caret"></b
-              ></a>
-              <ul class="dropdown-menu">
-                <li class="dropdown-header">Men's Clothing</li>
-
-                <li id="men_1"><a class="dropdown-item" href="#">T-Shirts</a></li>
-              </ul>
-            </li>
-            <!-- Children's Clothing DropDown Menu-->
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-                >Children<b class="caret"></b
-              ></a>
-              <ul class="dropdown-menu">
-                <li class="dropdown-header">Children's Clothing</li>
-                <li id="child_1"><a class="dropdown-item" href="#">T-Shirts</a></li>
-              </ul>
-            </li>
-            <!-- About Button-->
+            <li class="active"><a href="index.html">Home</a></li> 
+            <!-- Contact Button-->
             <li id="about_1"><a href="#">Contact Us</a></li>
-            <!-- Shopping Cart Button-->
-            <li id="shop_1">
-              <a href="#"> <i class="fas fa-shopping-cart fa-lg"></i> </a>
-            </li>
           </ul>
         </div>
-
-
-      
       </div>
-
-     
     </nav>
 
 
@@ -107,11 +61,11 @@
     <form id="contactForm" name="formOne"method="POST" action="https://httpbin.org/post" onsubmit="return validateInput();">
       <fieldset id="formWrap" bord>
         <legend>Contact Form</legend>
-      <label>Name* <input type="text" name="name"></label> <br>
-      <label>Email* <input type="email" name="mail"></label><br>
-              <label>Address* <input type="text" name="street"></label><br>
+      <label>Name* <input type="text" name="name" required></label> <br>
+      <label>Email* <input type="email" name="mail" required></label><br>
+              <label>Address* <input type="text" name="street" required></label><br>
               <!-- For city use a <datalist> for autocomplete of common Canadian Cities-->
-                <label>City* <input list="cities" name="cities" id="city"></label><br>
+                <label>City* <input list="cities" name="cities" id="city" required></label><br>
                 <datalist id="cities">
                   <option value="Toronto">
                   <option value="Vancouver">
@@ -124,8 +78,7 @@
                                <option value="Ottawa">
               </datalist>
               <!--Must be a valid Canadian Postal Code, with or without a space, use a regex pattern-->
-              <label>Postal Code* <input type="text" name="postalCode" pattern="([ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ])\ ?([0-9][ABCEGHJKLMNPRSTVWXYZ][0-9])
-                " required> <br><br>
+              <label>Postal Code* <input type="text" name="postalCode" pattern="^([A-Za-z]\d[A-Za-z][-]?\d[A-Za-z]\d)" required> <br><br>
 
               <!--Radio options Question, Comment, and order problem. If the user selects order problem dynamically
               reveal with JS another input box to enter the order number. Otherwise hide the input box if comment or question
@@ -137,6 +90,7 @@
               <br>
               <br>
               <div id="textBox">
+                <!--If user selects Order Problem it populates the label below-->
 <label id="inputBox"></label>
               </div>
               <!--A large area to enter a message they want to send-->
@@ -156,26 +110,26 @@
     <footer>
       <!--Bottom Left Navigation Bar - Add's Copyright-->
       <div id="botNav" class="navbar navbar-inverse navbar-fixed-bottom">
-        <div class="container">
+        
           <div class="navbar-text pull-left">
             <p>copyright Quality T-shirts Inc. 2020</p>
           </div>
 
           <div class="navbar-text">
 
-              <!-- Form Containor -->
-    <form id="formId" method="POST" action="https://formspree.io/xnqgrzwr">
-      <label>
-        Subscribe: <input type="email" name="email">
-      </label>
-      <label>
-        <input type="submit" name="submit" value="Send">
-      </label>
-   
-      </form>
+              <!-- Form Container -->
+              <form id="formId" method="POST" action="https://formspree.io/xnqgrzwr">
+                <label>
+                  Subscribe: <input type="email" name="email">
+                </label>
+                <label>
+                  <input type="submit" name="submit" value="Send">
+                </label>
+             
+                </form>
       
     </div>
-          </div>
+          
 
           <!-- Bottom Right Navigation Bar - Add's Social Links-->
           <div class="navbar-text pull-right">
