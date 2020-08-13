@@ -1,0 +1,136 @@
+/* Add any CSS you need to this file. */
+
+/*Gets rid of the additional margine added my html to fill the left top and bottom of page*/
+
+/*Sets entire body to have padding sized for the header and footer, and changes entire background color*/
+body {
+  padding-top: 120px;
+  padding-bottom: 200px;
+}
+
+/*sets background color of main page to a light shade of orange*/
+body,
+body #grid {
+  background-color: #f79862;
+}
+
+/*sets titles font*/
+h1 {
+  font-family: fantasy;
+}
+
+/*sets all paragraphs to a font*/
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*Selects entire top nav-bar and changes color/size of navbar*/
+#topNav {
+  background-color: black;
+  min-height: 80px;
+}
+
+/*Shifts all top nav-bar hyperlinks down*/
+#topNav.navbar {
+  padding-top: 15px;
+}
+
+/*Shifts search text box a little lower than text so it looks nicer*/
+#topNav.navbar li.searchBar {
+  padding-top: 5px;
+}
+
+/*Extends the bottom nav bar to its maximum width*/
+#botNav {
+  background-color: #800000;
+  font-size: 20;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  max-height: 80px;
+}
+
+/*Selects logo/logo text and changes brand name color/size*/
+.navbar .container a.navbar-brand {
+  font-family: 'Open Sans', sans-serif;
+  color: orange;
+  font-size: 25px;
+}
+
+/*Subscriber input in footer*/
+#formId {
+  color: orange;
+  text-align: center;
+}
+
+/*field set*/
+#formWrap {
+  width: 70%;
+}
+
+/*div that contains the contact us form*/
+#formDiv {
+  text-align: center;
+}
+
+/* Contents in the form*/
+#contactForm {
+  display: inline-block;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#homeCarousel #myCarousel .carousel-inner {
+  border-radius: 20px;
+}
+
+.grid-container {
+  display: grid;
+  /*grid-template-columns specifies 3 columns across page that each take up 33.3 percent of page*/
+  grid-template-columns: repeat(3, 1fr);
+  /*grid-gap specifies distance between grid column and row, or if needed you can specify diff gaps for each*/
+  grid-gap: 100px;
+  /*margin sets the margin of every grid item to a max size of 50*/
+  margin: 50px;
+  /*min-width sets the minimum width of the grid-items box*/
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 3px solid rgba(0, 0, 0, 0.8);
+  padding-top: 20px;
+  font-size: 30px;
+  text-align: center;
+  min-width: 100px;
+  border-radius: 20px;
+}
+
+/*Creates background for Modal around Modal and centers Modal*/
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Creates white box in center of screen and sets its width/height for modal*/
+.modal-content {
+  width: 450px;
+  height: 600px;
+  background-color: white;
+  text-align: center;
+}
+
+/*For all devices once the screen hits 1315px it will shrink to 2 columns instead of 3*/
+@media all and (max-width: 1315px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/*For all devices once the screen hits 908px it will shrink to 2 columns instead of 3*/
+@media all and (max-width: 908px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
